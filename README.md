@@ -30,7 +30,7 @@ When cloning, choose a more suiteable  name for the target directory!
 ```ShellSession
 $ git clone https://github.com/belbob/bareos-playground.git my-bareos-playground
 ```
-After cloning, it's best to remove the `.git` directory and initialise a new repository. The history of the code is most probably irrelevant for your glpi-playground project...
+After cloning, it's best to remove the `.git` directory and initialise a new repository. The history of the code is most probably irrelevant for your bareos-playground project...
 
 ### Installation bareos-playground with Vagrant
 
