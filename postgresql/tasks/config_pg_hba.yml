@@ -1,0 +1,11 @@
+---
+- name: config pg_hba.conf
+  copy:
+    src: pg_hba.conf
+    dest: /var/lib/pgsql/data/pg_hba.conf
+    owner: postgres
+    group: postgres
+    mode: 0600
+    backup: yes
+  notify:
+    - restart postgresql

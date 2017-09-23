@@ -1,0 +1,7 @@
+---
+- name: Copy the admin.conf
+  template:
+    src: admin.conf.j2
+    dest: /etc/bareos/bareos-dir.d/console/admin.conf
+  notify:
+    - restart bareos-dir

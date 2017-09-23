@@ -1,0 +1,12 @@
+---
+packages:
+ - postgresql-server
+ - postgresql-contrib
+services:
+ - postgresql
+#sockets:
+# - cockpit.socket
+#firewalld_services_enabled:
+# - ssh
+#firewalld_ports_enabled:
+# - 9090/tcp

@@ -1,0 +1,17 @@
+---
+packages:
+ - bareos
+ - bareos-database-postgresql
+ - bareos-webui
+services:
+ - bareos-dir
+ - bareos-sd
+ - bareos-fd
+ - httpd
+ - firewalld
+firewalld_services_enabled:
+ - http
+firewalld_ports_enabled:
+ - 80/tcp
+set_sebooleans:
+ - httpd_can_network_connect

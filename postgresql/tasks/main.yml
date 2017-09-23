@@ -1,0 +1,6 @@
+---
+- include: install.yml  # install pkgs
+- include: initdb.yml   # init postgresql
+- include: services.yml  # running services
+- include: config_pg_hba.yml # set md5 auth
+#- include: security.yml # config firewall

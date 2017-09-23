@@ -1,0 +1,8 @@
+---
+- name: check if postgresql is initiated
+  stat: path=/var/lib/pgsql/data/postgresql.conf
+  register: postgresql_conf
+
+- name: Initdb
+  command: postgresql-setup initdb
+  when: postgresql_conf.stat.exists == false

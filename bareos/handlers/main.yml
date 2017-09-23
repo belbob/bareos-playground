@@ -1,0 +1,20 @@
+---
+- name: restart firewalld
+  service:
+    name: firewalld
+    state: restarted
+
+- name: restart bareos-dir
+  service:
+    name: bareos-dir
+    state: restarted
+
+- name: restart bareos-fd
+  service:
+    name: bareos-fd
+    state: restarted
+
+- name: restart bareos-sd
+  service:
+    name: bareos-sd
+    state: restarted

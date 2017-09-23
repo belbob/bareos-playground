@@ -1,0 +1,24 @@
+---
+- name: check bareosdb exist
+  shell: echo $(psql -l | grep -w bareos | wc -l)
+  become: true
+  become_user: postgres
+  register: bareosdb_exist
+
+- name: Create bareos database
+  command: /usr/lib/bareos/scripts/create_bareos_database
+  become: true
+  become_user: postgres
+  when: bareosdb_exist.stdout == "0"
+
+- name: Create tables
+  command: /usr/lib/bareos/scripts/make_bareos_tables
+  become: true
+  become_user: postgres
+  when: bareosdb_exist.stdout == "0"
+
+- name: Set privileges
+  command: /usr/lib/bareos/scripts/grant_bareos_privileges
+  become: true
+  become_user: postgres
+  when: bareosdb_exist.stdout == "0"

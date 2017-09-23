@@ -1,0 +1,22 @@
+---
+packages:
+ - wget
+ - ntp
+ - firewalld
+ - libsemanage-python
+ - cockpit
+ - cockpit-dashboard
+ - cockpit-networkmanager
+ - cockpit-packagekit
+ - cockpit-storaged
+ - iscsi-initiator-utils
+services:
+ - sshd
+ - ntpd
+ - firewalld
+sockets:
+ - cockpit.socket
+firewalld_services_enabled:
+ - ssh
+firewalld_ports_enabled:
+ - 9090/tcp

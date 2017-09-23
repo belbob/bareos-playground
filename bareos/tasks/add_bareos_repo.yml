@@ -1,0 +1,5 @@
+---
+- name: Install bareos.repo
+  get_url:
+    url: http://download.bareos.org/bareos/release/latest/CentOS_7/bareos.repo
+    dest: /etc/yum.repos.d/bareos.repo

@@ -1,0 +1,7 @@
+---
+- include: add_bareos_repo.yml # install repo
+- include: install.yml  # install pkgs
+- include: create_bareosdb.yml # create DB
+- include: services.yml  # running services
+- include: security.yml # config firewall and SELinux
+- include: create_webui_user.yml # create webui-login
